@@ -14,3 +14,11 @@
   border-top-left-radius: $left;
   border-top-right-radius: $right;
 }
+@mixin borderRadiusBottom($left: 15px, $right: 15px){
+  border-bottom-left-radius: $left;
+  border-bottom-right-radius: $right;
+}
+
+@mixin boxShadowHover(){
+  box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+}

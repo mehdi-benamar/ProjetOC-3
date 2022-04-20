@@ -1,11 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="./css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap" rel="stylesheet"> 
   <title>Oh My Food !</title>
 </head>
 <body>
@@ -62,8 +67,30 @@
           <p class="restaurant--nouveau">nouveau</p>
           <div class="restaurant--footer">
             <div class="restaurant--description">
-              <h3>La palette du goût</h3>
-              <p>Ménilmontant</p>
+              <h3>La note enchantée</h3>
+              <p>Charonne</p>
+            </div>
+            <i class="fa-regular fa-heart restaurant--icon"></i>
+            <i class="fa-solid fa-heart restaurant--icon"></i>
+          </div>
+        </article>
+        <article class="restaurant--article">
+          <img src="./images/restaurants/francaise.jpg" alt="" class="restaurant--image">
+          <div class="restaurant--footer">
+            <div class="restaurant--description">
+              <h3>À la française</h3>
+              <p>Cité Rouge</p>
+            </div>
+            <i class="fa-regular fa-heart restaurant--icon"></i>
+            <i class="fa-solid fa-heart restaurant--icon"></i>
+          </div>
+        </article>
+        <article class="restaurant--article">
+          <img src="./images/restaurants/delice-sens.jpg" alt="" class="restaurant--image">
+          <div class="restaurant--footer">
+            <div class="restaurant--description">
+              <h3>Le délice des sens</h3>
+              <p>Folie-Méricourt</p>
             </div>
             <i class="fa-regular fa-heart restaurant--icon"></i>
             <i class="fa-solid fa-heart restaurant--icon"></i>
@@ -72,5 +99,22 @@
       </div>
     </section>
   </main>
+  <footer class="footer">
+    <h4 class="footer--logo">Ohmyfood</h4>
+    <nav class="footer--navigation">
+      <ul>
+        <li class="footer--liste">
+          <i class="fa-solid fa-utensils footer--icon"></i>
+          <p>Proposer un restaurant</p>
+        </li>
+        <li class="footer--liste">
+          <i class="fa-solid fa-handshake-angle footer--icon"></i>
+          <p>Devenir partenaire</p>
+        </li>
+        <li class="footer--liste">Mentions légales</li>
+        <li class="footer--liste">Contact</li>
+      </ul>
+    </nav>
+  </footer>
 </body>
 </html>

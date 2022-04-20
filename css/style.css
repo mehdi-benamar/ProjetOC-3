@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 
-p {
+p, li {
   font-family: Roboto, sans-serif;
   font-size: 17px;
 }
@@ -22,6 +22,11 @@ button {
 }
 
 h1, h2, h3 {
+  font-family: Roboto, sans-serif;
+  font-weight: bold;
+}
+
+h4 {
   font-family: Shrikhand, sans-serif;
   font-weight: bold;
 }
@@ -107,14 +112,22 @@ h1, h2, h3 {
   padding: 20px 25px 20px 25px;
   margin-bottom: 20px;
   position: relative;
+  font-weight: bold;
   background-color: rgba(183, 170, 170, 0.2);
-  transition: color 0.3s ease-in, background-color 0.3s ease-in, box-shadow 0.3s ease-in;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+  transition: background-color 0.3s ease-in, box-shadow 0.3s ease-in;
+}
+.fonctionnement--choix i {
+  color: black;
+  transition: color 0.3s ease-in;
 }
 .fonctionnement--choix:hover {
-  color: #9356DC;
+  background-color: #e4d5f6;
   cursor: pointer;
-  background-color: rgba(183, 170, 170, 0.6);
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+.fonctionnement--choix:hover i {
+  color: #9356DC;
 }
 .fonctionnement--choix::before {
   content: "1";
@@ -156,7 +169,7 @@ h1, h2, h3 {
 }
 .restaurant--article {
   width: 80%;
-  background-color: salmon;
+  max-width: 900px;
   position: relative;
   margin-bottom: 25px;
 }
@@ -180,19 +193,22 @@ h1, h2, h3 {
 .restaurant--footer {
   background-color: white;
   position: relative;
-  margin: 15px 17px 15px 17px;
+  padding: 20px 17px 15px 17px;
+  margin-top: -3px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
 }
 .restaurant--footer .restaurant--icon {
   font-size: 25px;
   position: absolute;
   display: inline-block;
-  right: 10px;
+  right: 17px;
   top: calc(65% - 20px);
 }
 .restaurant--footer .fa-solid {
   color: transparent;
   background-image: none;
-  transition: all 0.5s ease-in;
+  transition: background-image 0.5s ease-in;
 }
 .restaurant--footer .fa-solid:hover {
   background-image: linear-gradient(#FF79DA, #9356DC);
@@ -201,6 +217,42 @@ h1, h2, h3 {
 }
 .restaurant--description h3 {
   margin-bottom: 3px;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  padding: 15px 0 30px 12%;
+  width: 100%;
+  background-color: rgb(53, 53, 53);
+  color: white;
+}
+.footer--logo {
+  width: 120px;
+  display: block;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  color: white;
+  letter-spacing: 1px;
+  font-size: 20px;
+}
+.footer--navigation ul {
+  display: flex;
+  flex-direction: column;
+}
+.footer--navigation .footer--liste {
+  list-style: none;
+  margin-bottom: 10px;
+}
+.footer--navigation .footer--liste:nth-child(1), .footer--navigation .footer--liste:nth-child(2) {
+  display: flex;
+  align-items: center;
+}
+.footer--navigation .footer--liste:nth-child(1) .footer--icon {
+  margin-right: 17px;
+}
+.footer--navigation .footer--liste .footer--icon {
+  margin-right: 10px;
 }
 
 /*# sourceMappingURL=style.css.map */

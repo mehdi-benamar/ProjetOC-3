@@ -60,7 +60,7 @@
 
     &:hover{
       opacity: 0.85;
-      box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+      @include boxShadowHover();
     }
   }
 }
@@ -89,15 +89,22 @@
     padding: 20px 25px 20px 25px;
     margin-bottom: 20px;
     position: relative;
+    font-weight: bold;
     @include grisOpacite(0.2);
-    transition: color .3s ease-in,
-                background-color .3s ease-in,
+    @include boxShadow();
+    transition: background-color .3s ease-in,
                 box-shadow .3s ease-in;
+    & i{
+      color: black;
+      transition: color .3s ease-in;
+    }
     &:hover{
-      color: $couleur-primaire;
+      background-color: lighten($couleur-primaire, 30%);
       cursor: pointer;
-      @include grisOpacite(0.6);
-      box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+      @include boxShadowHover();
+      & i{
+        color: $couleur-primaire
+      }
     }
   }
   &--choix::before{
@@ -142,7 +149,7 @@
 
   &--article{
     width: 80%;
-    background-color: salmon;
+    max-width: 900px;
     position: relative;
     margin-bottom: 25px;
   }
@@ -169,20 +176,22 @@
   &--footer{
     background-color: white;
     position: relative;
-    margin: 15px 17px 15px 17px;
+    padding: 20px 17px 15px 17px;
+    margin-top: -3px;
+    @include borderRadiusBottom();
 
      & .restaurant--icon{
       font-size: 25px;
       position: absolute;
       display: inline-block;
-      right: 10px;
+      right: 17px;
       top: calc(65% - 20px);
      }
 
      & .fa-solid{
        color: transparent;
        background-image: none;
-       transition: all .5s ease-in;
+       transition: background-image .5s ease-in;
        &:hover{
         background-image: linear-gradient($couleur-secondaire, $couleur-primaire);
         background-clip: text;
@@ -193,5 +202,45 @@
 
   &--description h3{
     margin-bottom: 3px;
+  }
+}
+
+.footer{
+  display: flex;
+  flex-direction: column;
+  padding: 15px 0 30px 12%;
+  width: 100%;
+  background-color: rgb(53, 53, 53);
+  color: white;
+  &--logo{
+    width: 120px;
+    display: block;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    color: white;
+    letter-spacing: 1px;
+    font-size: 20px;
+  }
+
+  &--navigation ul{
+    display: flex;
+    flex-direction: column;
+  }
+
+  &--navigation &--liste{
+    list-style: none;
+    margin-bottom: 10px;
+    &:nth-child(1), &:nth-child(2){
+      display: flex;
+      align-items: center;
+    }
+
+    &:nth-child(1) .footer--icon{
+      margin-right: 17px;
+    }
+
+    & .footer--icon{
+      margin-right: 10px;
+    }
   }
 }
