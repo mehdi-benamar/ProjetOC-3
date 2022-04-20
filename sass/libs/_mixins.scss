@@ -9,3 +9,8 @@
 @mixin boxShadow {
   box-shadow: 2px 2px 3px rgba(0,0,0,0.5);
 }
+
+@mixin borderRadiusTop($left: 15px, $right: 15px){
+  border-top-left-radius: $left;
+  border-top-right-radius: $right;
+}
