@@ -11,13 +11,19 @@
     display: block;
     width: 100%;
   }
+  &--arrow{
+    position: absolute;
+    left: 20px;
+    top: 35px;
+    color: black
+  }
 }
 .conteneur{
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  background-color: #f6f6f6;
+
 }
+
 
 .localite{
   display: flex;
@@ -48,6 +54,8 @@
 
   &--texte{
     margin-bottom: 20px;
+    padding-right: 20px;;
+    padding-left: 20px;;
   }
 
   &--btn{
@@ -69,12 +77,12 @@
   display: flex;
   flex-direction: column;
   width: 100%;
+  max-width: 700px;
   padding: 40px 20px 40px 20px;
   
   &--liste{
     display: flex;
     flex-direction: column;
-    align-items: center;
     width: 100%;
     border-radius: 20px;
   }
@@ -84,9 +92,9 @@
   &--choix{
     display: flex;
     align-items: center;
-    width: 350px;
+    width: 100%;
     border-radius: 20px;
-    padding: 20px 25px 20px 25px;
+    padding: 20px 0 20px 25px;
     margin-bottom: 20px;
     position: relative;
     font-weight: bold;
@@ -143,12 +151,13 @@
   &--groupe{
     display: flex;
     flex-direction: column;
-    align-items: center;
     margin-top: 30px;
+    width: 100%;
+    max-width: 700px;
   }
 
   &--article{
-    width: 80%;
+    width: 100%;
     max-width: 900px;
     position: relative;
     margin-bottom: 25px;
@@ -158,7 +167,7 @@
     height: 220px;
     width: 100%;
     object-fit: cover;
-    @include borderRadiusTop();
+    @include borderRadiusTop;
   }
 
   &--nouveau{
@@ -178,24 +187,21 @@
     position: relative;
     padding: 20px 17px 15px 17px;
     margin-top: -3px;
-    @include borderRadiusBottom();
+    display: flex;
+    align-items: center;
+    @include borderRadiusBottom;
 
      & .restaurant--icon{
       font-size: 25px;
       position: absolute;
       display: inline-block;
       right: 17px;
-      top: calc(65% - 20px);
      }
 
      & .fa-solid{
-       color: transparent;
-       background-image: none;
-       transition: background-image .5s ease-in;
+       @include coeurTransparent;
        &:hover{
-        background-image: linear-gradient($couleur-secondaire, $couleur-primaire);
-        background-clip: text;
-        cursor: pointer;
+        @include coeurApparition;
       }
      }
   }
@@ -208,7 +214,7 @@
 .footer{
   display: flex;
   flex-direction: column;
-  padding: 15px 0 30px 12%;
+  padding: 15px 0 30px 20px;
   width: 100%;
   background-color: rgb(53, 53, 53);
   color: white;
@@ -220,6 +226,7 @@
     color: white;
     letter-spacing: 1px;
     font-size: 20px;
+    font-weight: lighter;
   }
 
   &--navigation ul{
@@ -241,6 +248,141 @@
 
     & .footer--icon{
       margin-right: 10px;
+    }
+  }
+}
+
+// menu à la carte
+
+.carte {
+  width: 100%;
+  height: 300px;
+  &--image{
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.menu{
+  width: 100%;
+  height: 100%;
+  background-color: #f6f6f6;
+  position: relative;
+  top: -50px;
+  padding: 25px 20px 0 20px;
+  @include borderRadiusTop(30px, 30px);
+  &--header{
+    display: flex;
+    align-items: center;
+    position: relative;
+    & .menu--titre{
+      letter-spacing: 1px;
+      font-weight: lighter;
+      font-size: 25px;
+    }
+    & .menu--icon{
+      position: absolute;
+      right: 20px;
+      font-size: 25px;
+      &.fa-solid{
+        @include coeurTransparent;
+        &:hover{
+          @include coeurApparition;
+        }
+      }
+    }
+  }
+}
+
+.commande{
+  width: 100%;
+  height: 100%;
+  margin-bottom: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  &--header{
+    padding-top: 20px;
+  }
+  &--titre{
+    text-transform: uppercase;
+  }
+  &--underline{
+    width: 45px;
+    height: 4px;
+    border: none;
+    background-color: $couleur-tertiaire;
+    margin-top: 5px;
+  }
+  &--test{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  &--plat{
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    border-radius: 20px;
+    padding: 18px 15px 18px 15px;
+    transition: width .5s ease-in;
+    @include boxShadow;
+    &:hover{
+      width: 88%;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+    &:hover .commande--check{
+      width: 12%;
+      & i{
+        opacity: 1;
+      }
+    }
+  }
+
+  &--nom{
+    font-size: 18px;
+  }
+  &--footer{
+    display: flex;
+    justify-content: space-between;
+  }
+  &--check{
+    background-color: $couleur-tertiaire;
+    width: 0;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    transition: width .5s ease-in;
+    & i{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+    };
+  }
+}
+
+.btn{
+  text-align: center;
+  padding-bottom: 120px;
+  &--commande{
+    background: linear-gradient(180deg, $couleur-secondaire, $couleur-primaire);
+    color: white;
+    padding: 13px 50px 13px 50px;
+    border-radius: 25px;
+    transition: opacity .3s, box-shadow .3s;
+    @include boxShadow();
+
+    &:hover{
+      opacity: 0.85;
+      @include boxShadowHover();
     }
   }
 }

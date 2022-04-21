@@ -7,7 +7,7 @@
 }
 
 @mixin boxShadow {
-  box-shadow: 2px 2px 3px rgba(0,0,0,0.5);
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
 }
 
 @mixin borderRadiusTop($left: 15px, $right: 15px){
@@ -22,3 +22,15 @@
 @mixin boxShadowHover(){
   box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
 }
+
+@mixin coeurTransparent(){
+  color: transparent;
+  background-image: none;
+  transition: background-image .5s ease-in;
+}
+
+@mixin coeurApparition(){
+  background-image: linear-gradient($couleur-secondaire, $couleur-primaire);
+  background-clip: text;
+  cursor: pointer;
+  }

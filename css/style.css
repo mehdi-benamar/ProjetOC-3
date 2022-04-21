@@ -14,8 +14,8 @@ i {
 }
 
 button {
+  font-family: Roboto, sans-serif;
   font-size: 16px;
-  font-weight: bold;
   outline: none;
   border: none;
   cursor: pointer;
@@ -26,7 +26,7 @@ h1, h2, h3 {
   font-weight: bold;
 }
 
-h4 {
+h4, .menu--titre {
   font-family: Shrikhand, sans-serif;
   font-weight: bold;
 }
@@ -39,12 +39,16 @@ h4 {
   display: block;
   width: 100%;
 }
+.header--arrow {
+  position: absolute;
+  left: 20px;
+  top: 35px;
+  color: black;
+}
 
 .conteneur {
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  background-color: #f6f6f6;
 }
 
 .localite {
@@ -74,6 +78,8 @@ h4 {
 }
 .reservation--texte {
   margin-bottom: 20px;
+  padding-right: 20px;
+  padding-left: 20px;
 }
 .reservation--btn {
   background: linear-gradient(180deg, #FF79DA, #9356DC);
@@ -81,7 +87,7 @@ h4 {
   padding: 13px 15px 13px 15px;
   border-radius: 25px;
   transition: opacity 0.3s, box-shadow 0.3s;
-  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 .reservation--btn:hover {
   opacity: 0.85;
@@ -92,12 +98,12 @@ h4 {
   display: flex;
   flex-direction: column;
   width: 100%;
+  max-width: 700px;
   padding: 40px 20px 40px 20px;
 }
 .fonctionnement--liste {
   display: flex;
   flex-direction: column;
-  align-items: center;
   width: 100%;
   border-radius: 20px;
 }
@@ -107,14 +113,14 @@ h4 {
 .fonctionnement--choix {
   display: flex;
   align-items: center;
-  width: 350px;
+  width: 100%;
   border-radius: 20px;
-  padding: 20px 25px 20px 25px;
+  padding: 20px 0 20px 25px;
   margin-bottom: 20px;
   position: relative;
   font-weight: bold;
   background-color: rgba(183, 170, 170, 0.2);
-  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
   transition: background-color 0.3s ease-in, box-shadow 0.3s ease-in;
 }
 .fonctionnement--choix i {
@@ -164,11 +170,12 @@ h4 {
 .restaurant--groupe {
   display: flex;
   flex-direction: column;
-  align-items: center;
   margin-top: 30px;
+  width: 100%;
+  max-width: 700px;
 }
 .restaurant--article {
-  width: 80%;
+  width: 100%;
   max-width: 900px;
   position: relative;
   margin-bottom: 25px;
@@ -195,6 +202,8 @@ h4 {
   position: relative;
   padding: 20px 17px 15px 17px;
   margin-top: -3px;
+  display: flex;
+  align-items: center;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
 }
@@ -203,7 +212,6 @@ h4 {
   position: absolute;
   display: inline-block;
   right: 17px;
-  top: calc(65% - 20px);
 }
 .restaurant--footer .fa-solid {
   color: transparent;
@@ -222,7 +230,7 @@ h4 {
 .footer {
   display: flex;
   flex-direction: column;
-  padding: 15px 0 30px 12%;
+  padding: 15px 0 30px 20px;
   width: 100%;
   background-color: rgb(53, 53, 53);
   color: white;
@@ -235,6 +243,7 @@ h4 {
   color: white;
   letter-spacing: 1px;
   font-size: 20px;
+  font-weight: lighter;
 }
 .footer--navigation ul {
   display: flex;
@@ -253,6 +262,142 @@ h4 {
 }
 .footer--navigation .footer--liste .footer--icon {
   margin-right: 10px;
+}
+
+.carte {
+  width: 100%;
+  height: 300px;
+}
+.carte--image {
+  width: 100%;
+  height: 100%;
+}
+
+.menu {
+  width: 100%;
+  height: 100%;
+  background-color: #f6f6f6;
+  position: relative;
+  top: -50px;
+  padding: 25px 20px 0 20px;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+}
+.menu--header {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.menu--header .menu--titre {
+  letter-spacing: 1px;
+  font-weight: lighter;
+  font-size: 25px;
+}
+.menu--header .menu--icon {
+  position: absolute;
+  right: 20px;
+  font-size: 25px;
+}
+.menu--header .menu--icon.fa-solid {
+  color: transparent;
+  background-image: none;
+  transition: background-image 0.5s ease-in;
+}
+.menu--header .menu--icon.fa-solid:hover {
+  background-image: linear-gradient(#FF79DA, #9356DC);
+  background-clip: text;
+  cursor: pointer;
+}
+
+.commande {
+  width: 100%;
+  height: 100%;
+  margin-bottom: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.commande--header {
+  padding-top: 20px;
+}
+.commande--titre {
+  text-transform: uppercase;
+}
+.commande--underline {
+  width: 45px;
+  height: 4px;
+  border: none;
+  background-color: #99E2D0;
+  margin-top: 5px;
+}
+.commande--test {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.commande--plat {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  border-radius: 20px;
+  padding: 18px 15px 18px 15px;
+  transition: width 0.5s ease-in;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+.commande--plat:hover {
+  width: 88%;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.commande--plat:hover .commande--check {
+  width: 12%;
+}
+.commande--plat:hover .commande--check i {
+  opacity: 1;
+}
+.commande--nom {
+  font-size: 18px;
+}
+.commande--footer {
+  display: flex;
+  justify-content: space-between;
+}
+.commande--check {
+  background-color: #99E2D0;
+  width: 0;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  transition: width 0.5s ease-in;
+}
+.commande--check i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+
+.btn {
+  text-align: center;
+  padding-bottom: 120px;
+}
+.btn--commande {
+  background: linear-gradient(180deg, #FF79DA, #9356DC);
+  color: white;
+  padding: 13px 50px 13px 50px;
+  border-radius: 25px;
+  transition: opacity 0.3s, box-shadow 0.3s;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+.btn--commande:hover {
+  opacity: 0.85;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
 }
 
 /*# sourceMappingURL=style.css.map */
