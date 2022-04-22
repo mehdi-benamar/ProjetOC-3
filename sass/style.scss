@@ -18,12 +18,13 @@
     color: black
   }
 }
+
+// page principale
 .conteneur{
   width: 100%;
   background-color: #f6f6f6;
 
 }
-
 
 .localite{
   display: flex;
@@ -37,6 +38,8 @@
     margin-right: 14px;
   }
 }
+
+// rubrique "réservation"
 
 .reservation{
   display: flex;
@@ -73,6 +76,7 @@
   }
 }
 
+// rubrique "fonctionnement"
 .fonctionnement{
   display: flex;
   flex-direction: column;
@@ -141,6 +145,7 @@
   }
 }
 
+// rubrique "restaurant"
 .restaurant{
   @include grisOpacite(0.2);
   display: flex;
@@ -211,6 +216,7 @@
   }
 }
 
+// footer de la page
 .footer{
   display: flex;
   flex-direction: column;
@@ -237,9 +243,18 @@
   &--navigation &--liste{
     list-style: none;
     margin-bottom: 10px;
-    &:nth-child(1), &:nth-child(2){
+    &:nth-child(1), 
+    &:nth-child(2){
       display: flex;
       align-items: center;
+    }
+
+    &:last-child a{
+      color: white
+    }
+
+    &:last-child:hover{
+      text-decoration: underline;
     }
 
     &:nth-child(1) .footer--icon{
@@ -286,7 +301,7 @@
       font-size: 25px;
       &.fa-solid{
         @include coeurTransparent;
-        &:hover{
+        &:hover, &:focus{
           @include coeurApparition;
         }
       }
@@ -301,6 +316,19 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  animation: menuOpacite 2s ease-in-out forwards;
+  opacity: 0;
+  &:nth-child(2){
+    animation-delay: .3s;
+  }
+  &:nth-child(3){
+    animation-delay: .5s;
+  }
+
+  &:nth-child(4){
+    animation-delay: .8s;
+  }
+  
   &--header{
     padding-top: 20px;
   }
@@ -314,58 +342,67 @@
     background-color: $couleur-tertiaire;
     margin-top: 5px;
   }
-  &--test{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    position: relative;
-  }
   &--plat{
     width: 100%;
     height: 100%;
     background-color: white;
     border-radius: 20px;
     padding: 18px 15px 18px 15px;
-    transition: width .5s ease-in;
+    position: relative;
+    cursor: pointer;
     @include boxShadow;
-    &:hover{
-      width: 88%;
+
+    &:hover .commande--check, &:focus .commande--check{
+      transform: translateY(-50%) scaleX(1);
+      z-index: 1;
+      & i{
+        transform: rotate(360deg);
+      }
+    }
+
+    &:hover .commande--footer, &:focus .commande--footer{
+      padding-right: 65px;
       border-top-right-radius: 0;
       border-bottom-right-radius: 0;
     }
-    &:hover .commande--check{
-      width: 12%;
-      & i{
-        opacity: 1;
-      }
+  }
+
+  &--check{
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%) scaleX(0);
+    transform-origin: right;
+    background-color: $couleur-tertiaire;
+    height: 100%;
+    padding: 30px 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    transition: z-index, transform, .5s ease-in-out;
+    overflow: hidden;
+    z-index: -1;
+
+    & i{
+      color: white;
+      font-size: 20px;
+      transform: rotate(0deg);
+      transition: transform .5s .2s ease-in-out;
     }
   }
 
   &--nom{
     font-size: 18px;
+    @include overflow;
   }
   &--footer{
     display: flex;
     justify-content: space-between;
+    width: 100%;
+    transition: padding .5s ease-in-out;
+    padding-right: 0;
   }
-  &--check{
-    background-color: $couleur-tertiaire;
-    width: 0;
-    height: 100%;
-    position: absolute;
-    right: 0;
-    top: 0;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-    transition: width .5s ease-in;
-    & i{
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      opacity: 0;
-    };
+  &--description{
+    @include overflow;
   }
 }
 
@@ -380,9 +417,22 @@
     transition: opacity .3s, box-shadow .3s;
     @include boxShadow();
 
-    &:hover{
+    &:hover, &:focus{
       opacity: 0.85;
       @include boxShadowHover();
     }
+  }
+}
+
+// liste des keyframes
+
+@keyframes menuOpacite {
+  0% {
+    opacity: 0;
+    transform: translateY(300%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

@@ -31,6 +31,11 @@ h4, .menu--titre {
   font-weight: bold;
 }
 
+a {
+  text-decoration: none;
+  color: black;
+}
+
 .header {
   width: 300px;
   margin: 15px auto;
@@ -257,6 +262,12 @@ h4, .menu--titre {
   display: flex;
   align-items: center;
 }
+.footer--navigation .footer--liste:last-child a {
+  color: white;
+}
+.footer--navigation .footer--liste:last-child:hover {
+  text-decoration: underline;
+}
 .footer--navigation .footer--liste:nth-child(1) .footer--icon {
   margin-right: 17px;
 }
@@ -303,7 +314,7 @@ h4, .menu--titre {
   background-image: none;
   transition: background-image 0.5s ease-in;
 }
-.menu--header .menu--icon.fa-solid:hover {
+.menu--header .menu--icon.fa-solid:hover, .menu--header .menu--icon.fa-solid:focus {
   background-image: linear-gradient(#FF79DA, #9356DC);
   background-clip: text;
   cursor: pointer;
@@ -316,6 +327,17 @@ h4, .menu--titre {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  animation: menuOpacite 2s ease-in-out forwards;
+  opacity: 0;
+}
+.commande:nth-child(2) {
+  animation-delay: 0.3s;
+}
+.commande:nth-child(3) {
+  animation-delay: 0.5s;
+}
+.commande:nth-child(4) {
+  animation-delay: 0.8s;
 }
 .commande--header {
   padding-top: 20px;
@@ -330,57 +352,66 @@ h4, .menu--titre {
   background-color: #99E2D0;
   margin-top: 5px;
 }
-.commande--test {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  position: relative;
-}
 .commande--plat {
   width: 100%;
   height: 100%;
   background-color: white;
   border-radius: 20px;
   padding: 18px 15px 18px 15px;
-  transition: width 0.5s ease-in;
+  position: relative;
+  cursor: pointer;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
-.commande--plat:hover {
-  width: 88%;
+.commande--plat:hover .commande--check, .commande--plat:focus .commande--check {
+  transform: translateY(-50%) scaleX(1);
+  z-index: 1;
+}
+.commande--plat:hover .commande--check i, .commande--plat:focus .commande--check i {
+  transform: rotate(360deg);
+}
+.commande--plat:hover .commande--footer, .commande--plat:focus .commande--footer {
+  padding-right: 65px;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
-.commande--plat:hover .commande--check {
-  width: 12%;
+.commande--check {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%) scaleX(0);
+  transform-origin: right;
+  background-color: #99E2D0;
+  height: 100%;
+  padding: 30px 20px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  transition: z-index, transform, 0.5s ease-in-out;
+  overflow: hidden;
+  z-index: -1;
 }
-.commande--plat:hover .commande--check i {
-  opacity: 1;
+.commande--check i {
+  color: white;
+  font-size: 20px;
+  transform: rotate(0deg);
+  transition: transform 0.5s 0.2s ease-in-out;
 }
 .commande--nom {
   font-size: 18px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .commande--footer {
   display: flex;
   justify-content: space-between;
+  width: 100%;
+  transition: padding 0.5s ease-in-out;
+  padding-right: 0;
 }
-.commande--check {
-  background-color: #99E2D0;
-  width: 0;
-  height: 100%;
-  position: absolute;
-  right: 0;
-  top: 0;
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
-  transition: width 0.5s ease-in;
-}
-.commande--check i {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0;
+.commande--description {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .btn {
@@ -395,9 +426,20 @@ h4, .menu--titre {
   transition: opacity 0.3s, box-shadow 0.3s;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
-.btn--commande:hover {
+.btn--commande:hover, .btn--commande:focus {
   opacity: 0.85;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes menuOpacite {
+  0% {
+    opacity: 0;
+    transform: translateY(300%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -33,4 +33,10 @@
   background-image: linear-gradient($couleur-secondaire, $couleur-primaire);
   background-clip: text;
   cursor: pointer;
-  }
+}
+
+@mixin overflow {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
