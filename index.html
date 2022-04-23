@@ -1,19 +1,26 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="./css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap" rel="stylesheet">
   <title>Oh My Food !</title>
 </head>
+
 <body>
+  <div class="loader-container">
+    <div class="loader"></div>
+  </div>
   <header class="header">
     <img src="./images/logo/ohmyfood.png" alt="" class="header--image">
   </header>
@@ -51,50 +58,58 @@
       <h2 class="restaurant--titre">Restaurants</h2>
       <div class="restaurant--groupe">
         <article class="restaurant--article">
-          <img src="./images/restaurants/palette-gout.jpg" alt="" class="restaurant--image">
-          <p class="restaurant--nouveau">nouveau</p>
-          <div class="restaurant--footer">
-            <div class="restaurant--description">
-              <h3>La palette du goût</h3>
-              <p>Ménilmontant</p>
+          <a href="./la-palette-du-gout.html">
+            <img src="./images/restaurants/palette-gout.jpg" alt="" class="restaurant--image">
+            <p class="restaurant--nouveau">nouveau</p>
+            <div class="restaurant--footer">
+              <div class="restaurant--description">
+                <h3>La palette du goût</h3>
+                <p>Ménilmontant</p>
+              </div>
+              <i class="fa-regular fa-heart restaurant--icon"></i>
+              <i class="fa-solid fa-heart restaurant--icon"></i>
             </div>
-            <i class="fa-regular fa-heart restaurant--icon"></i>
-            <i class="fa-solid fa-heart restaurant--icon"></i>
-          </div>
+          </a>
         </article>
         <article class="restaurant--article">
-          <img src="./images/restaurants/note-enchantee.jpg" alt="" class="restaurant--image">
-          <p class="restaurant--nouveau">nouveau</p>
-          <div class="restaurant--footer">
-            <div class="restaurant--description">
-              <h3>La note enchantée</h3>
-              <p>Charonne</p>
+          <a href="./la-note-enchantee.html">
+            <img src="./images/restaurants/note-enchantee.jpg" alt="" class="restaurant--image">
+            <p class="restaurant--nouveau">nouveau</p>
+            <div class="restaurant--footer">
+              <div class="restaurant--description">
+                <h3>La note enchantée</h3>
+                <p>Charonne</p>
+              </div>
+              <i class="fa-regular fa-heart restaurant--icon"></i>
+              <i class="fa-solid fa-heart restaurant--icon"></i>
             </div>
-            <i class="fa-regular fa-heart restaurant--icon"></i>
-            <i class="fa-solid fa-heart restaurant--icon"></i>
-          </div>
+          </a>
         </article>
         <article class="restaurant--article">
-          <img src="./images/restaurants/francaise.jpg" alt="" class="restaurant--image">
-          <div class="restaurant--footer">
-            <div class="restaurant--description">
-              <h3>À la française</h3>
-              <p>Cité Rouge</p>
+          <a href="./a-la-francaise.html">
+            <img src="./images/restaurants/francaise.jpg" alt="" class="restaurant--image">
+            <div class="restaurant--footer">
+              <div class="restaurant--description">
+                <h3>À la française</h3>
+                <p>Cité Rouge</p>
+              </div>
+              <i class="fa-regular fa-heart restaurant--icon"></i>
+              <i class="fa-solid fa-heart restaurant--icon"></i>
             </div>
-            <i class="fa-regular fa-heart restaurant--icon"></i>
-            <i class="fa-solid fa-heart restaurant--icon"></i>
-          </div>
+          </a>
         </article>
         <article class="restaurant--article">
-          <img src="./images/restaurants/delice-sens.jpg" alt="" class="restaurant--image">
-          <div class="restaurant--footer">
-            <div class="restaurant--description">
-              <h3>Le délice des sens</h3>
-              <p>Folie-Méricourt</p>
+          <a href="./le-delice-des-sens.html">
+            <img src="./images/restaurants/delice-sens.jpg" alt="" class="restaurant--image">
+            <div class="restaurant--footer">
+              <div class="restaurant--description">
+                <h3>Le délice des sens</h3>
+                <p>Folie-Méricourt</p>
+              </div>
+              <i class="fa-regular fa-heart restaurant--icon"></i>
+              <i class="fa-solid fa-heart restaurant--icon"></i>
             </div>
-            <i class="fa-regular fa-heart restaurant--icon"></i>
-            <i class="fa-solid fa-heart restaurant--icon"></i>
-          </div>
+          </a>
         </article>
       </div>
     </section>
@@ -117,4 +132,5 @@
     </nav>
   </footer>
 </body>
+
 </html>

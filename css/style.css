@@ -36,6 +36,51 @@ a {
   color: black;
 }
 
+.loader-container {
+  position: absolute;
+  background: rgba(51, 51, 51, 0.7);
+  width: 100%;
+  height: 150rem;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  animation: zindex 2.5s ease-in forwards;
+}
+.loader-container .loader {
+  position: relative;
+  display: block;
+  width: 300px;
+  height: 300px;
+  margin: 250px auto 0;
+  border-radius: 50%;
+  border: 7px solid transparent;
+  border-top-color: #9356DC;
+  animation: spin 2.5s ease-in;
+}
+.loader-container .loader::before, .loader-container .loader::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  border: 7px solid transparent;
+}
+.loader-container .loader::before {
+  top: 10px;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  border-top-color: #FF79DA;
+  animation: spin 2s ease-in;
+}
+.loader-container .loader::after {
+  top: 25px;
+  bottom: 25px;
+  left: 25px;
+  right: 25px;
+  border-top-color: #99E2D0;
+  animation: spin 1.5s ease-in;
+}
+
 .header {
   width: 300px;
   margin: 15px auto;
@@ -282,6 +327,7 @@ a {
 .carte--image {
   width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 
 .menu {
@@ -289,7 +335,7 @@ a {
   height: 100%;
   background-color: #f6f6f6;
   position: relative;
-  top: -50px;
+  top: -40px;
   padding: 25px 20px 0 20px;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
@@ -439,6 +485,24 @@ a {
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes zindex {
+  0% {
+    z-index: 2;
+    opacity: 1;
+  }
+  100% {
+    z-index: -1;
+    opacity: 0;
   }
 }
 
