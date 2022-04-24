@@ -4,50 +4,51 @@
 @import "./libs/typographie";
 
 // loader spinner
-.loader-container{
-  position: absolute;
-  background: rgba(51,51,51,0.7);
-  width: 100%;
-  height: 150rem;
-  top: 0;
-  bottom: 0;
-  display: flex;
-  justify-content: center;
-  animation: zindex 2.5s ease-in forwards;
-  & .loader{
-    position: relative;
-    display: block;
-    width: 300px;
-    height: 300px;
-    margin: 250px auto 0;
-    border-radius: 50%;
-    border: 7px solid transparent;
-    border-top-color: $couleur-primaire;
-    animation: spin 2.5s ease-in;
-    &::before, &::after{
-      content: "";
-      position: absolute;
-      border-radius: 50%;
-      border: 7px solid transparent;
-    }
-    &::before{
-      top: 10px;
-      bottom: 10px;
-      left: 10px;
-      right: 10px;
-      border-top-color: $couleur-secondaire;
-      animation: spin 2s ease-in;
-    }
-    &::after{
-      top: 25px;
-      bottom: 25px;
-      left: 25px;
-      right: 25px;
-      border-top-color: $couleur-tertiaire;
-      animation: spin 1.5s ease-in;
-    }
-  }
-}
+// .loader-container{
+//   position: absolute;
+//   background: rgba(51,51,51,0.7);
+//   width: 100%;
+//   height: 150rem;
+//   top: 0;
+//   bottom: 0;
+//   display: flex;
+//   justify-content: center;
+//   animation: zindex 2.5s ease-in forwards;
+//   z-index: -1;
+//   & .loader{
+//     position: relative;
+//     display: block;
+//     width: 300px;
+//     height: 300px;
+//     margin: 250px auto 0;
+//     border-radius: 50%;
+//     border: 7px solid transparent;
+//     border-top-color: $couleur-primaire;
+//     animation: spin 2.5s ease-in;
+//     &::before, &::after{
+//       content: "";
+//       position: absolute;
+//       border-radius: 50%;
+//       border: 7px solid transparent;
+//     }
+//     &::before{
+//       top: 10px;
+//       bottom: 10px;
+//       left: 10px;
+//       right: 10px;
+//       border-top-color: $couleur-secondaire;
+//       animation: spin 2s ease-in;
+//     }
+//     &::after{
+//       top: 25px;
+//       bottom: 25px;
+//       left: 25px;
+//       right: 25px;
+//       border-top-color: $couleur-tertiaire;
+//       animation: spin 1.5s ease-in;
+//     }
+//   }
+// }
 
 .header{
   width: 300px;
@@ -127,7 +128,6 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 700px;
   padding: 40px 20px 40px 20px;
   
   &--liste{
@@ -204,7 +204,6 @@
     flex-direction: column;
     margin-top: 30px;
     width: 100%;
-    max-width: 700px;
   }
 
   &--article{
@@ -266,7 +265,7 @@
 .footer{
   display: flex;
   flex-direction: column;
-  padding: 15px 0 30px 20px;
+  padding: 15px 20px 30px 20px;
   width: 100%;
   background-color: rgb(53, 53, 53);
   color: white;
@@ -484,22 +483,55 @@
   }
 }
 
-@keyframes spin {
-  0% {
-    transform: rotate(0);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
+// @keyframes spin {
+//   0% {
+//     transform: rotate(0);
+//   }
+//   100% {
+//     transform: rotate(360deg);
+//   }
+// }
 
-@keyframes zindex {
-  0% {
-    z-index: 2;
-    opacity: 1;
+// @keyframes zindex {
+//   0% {
+//     z-index: 2;
+//     opacity: 1;
+//   }
+//   100% {
+//     z-index: -1;
+//     opacity: 0;
+//   }
+// }
+
+@media only screen and (min-width: map-get($breakPoints, "mobile")){
+  .fonctionnement--liste{
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    & .fonctionnement--choix{
+      height: 100px;
+      width: 33%;
+      word-wrap: break-word;
+    }
   }
-  100% {
-    z-index: -1;
-    opacity: 0;
+
+  .restaurant--groupe{
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    & .restaurant--article{
+      width: 48%;
+    }
+  }
+
+  .footer{
+    align-items: center;
+    &--navigation{
+      width: 100%;
+      & ul{
+        flex-direction: row;
+        justify-content: space-around;
+      }
+    }
   }
 }

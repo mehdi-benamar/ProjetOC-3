@@ -36,51 +36,6 @@ a {
   color: black;
 }
 
-.loader-container {
-  position: absolute;
-  background: rgba(51, 51, 51, 0.7);
-  width: 100%;
-  height: 150rem;
-  top: 0;
-  bottom: 0;
-  display: flex;
-  justify-content: center;
-  animation: zindex 2.5s ease-in forwards;
-}
-.loader-container .loader {
-  position: relative;
-  display: block;
-  width: 300px;
-  height: 300px;
-  margin: 250px auto 0;
-  border-radius: 50%;
-  border: 7px solid transparent;
-  border-top-color: #9356DC;
-  animation: spin 2.5s ease-in;
-}
-.loader-container .loader::before, .loader-container .loader::after {
-  content: "";
-  position: absolute;
-  border-radius: 50%;
-  border: 7px solid transparent;
-}
-.loader-container .loader::before {
-  top: 10px;
-  bottom: 10px;
-  left: 10px;
-  right: 10px;
-  border-top-color: #FF79DA;
-  animation: spin 2s ease-in;
-}
-.loader-container .loader::after {
-  top: 25px;
-  bottom: 25px;
-  left: 25px;
-  right: 25px;
-  border-top-color: #99E2D0;
-  animation: spin 1.5s ease-in;
-}
-
 .header {
   width: 300px;
   margin: 15px auto;
@@ -148,7 +103,6 @@ a {
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 700px;
   padding: 40px 20px 40px 20px;
 }
 .fonctionnement--liste {
@@ -222,7 +176,6 @@ a {
   flex-direction: column;
   margin-top: 30px;
   width: 100%;
-  max-width: 700px;
 }
 .restaurant--article {
   width: 100%;
@@ -280,7 +233,7 @@ a {
 .footer {
   display: flex;
   flex-direction: column;
-  padding: 15px 0 30px 20px;
+  padding: 15px 20px 30px 20px;
   width: 100%;
   background-color: rgb(53, 53, 53);
   color: white;
@@ -487,22 +440,36 @@ a {
     transform: translateY(0);
   }
 }
-@keyframes spin {
-  0% {
-    transform: rotate(0);
+@media only screen and (min-width: 768px) {
+  .fonctionnement--liste {
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
   }
-  100% {
-    transform: rotate(360deg);
+  .fonctionnement--liste .fonctionnement--choix {
+    height: 100px;
+    width: 33%;
+    word-wrap: break-word;
   }
-}
-@keyframes zindex {
-  0% {
-    z-index: 2;
-    opacity: 1;
+
+  .restaurant--groupe {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
   }
-  100% {
-    z-index: -1;
-    opacity: 0;
+  .restaurant--groupe .restaurant--article {
+    width: 48%;
+  }
+
+  .footer {
+    align-items: center;
+  }
+  .footer--navigation {
+    width: 100%;
+  }
+  .footer--navigation ul {
+    flex-direction: row;
+    justify-content: space-around;
   }
 }
 
