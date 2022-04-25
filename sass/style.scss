@@ -5,10 +5,10 @@
 
 // loader spinner
 .loader-container{
-  position: absolute;
+  position: fixed;
   background: rgba(51,51,51,0.7);
   width: 100%;
-  height: 150rem;
+  height: 100vh;
   top: 0;
   bottom: 0;
   display: flex;
@@ -167,11 +167,13 @@
   }
   &--choix::before{
     content: "1";
-    width: 25px;
-    display: block;
-    text-align: center;
+    width: 30px;
+    height: 30px;
+    display: flex;
     position: absolute;
-    left: -10px;
+    align-items: center;
+    justify-content: center;
+    left: -15px;
     top: 50%;
     border-radius: 50%;
     transform: translateY(-50%);
@@ -504,10 +506,6 @@
 }
 
 @media only screen and (min-width: map-get($breakPoints, "mobile")){
-  .loader-container{
-    height: 97rem;
-  }
-
   .fonctionnement--liste{
     flex-direction: row;
     align-items: center;
@@ -524,18 +522,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     & .restaurant--article{
-      width: 48%;
-    }
-  }
-
-  .footer{
-    align-items: center;
-    &--navigation{
-      width: 100%;
-      & ul{
-        flex-direction: row;
-        justify-content: space-around;
-      }
+      width: 49%;
     }
   }
 }
