@@ -227,7 +227,6 @@ a {
 }
 .restaurant--article {
   width: 100%;
-  max-width: 900px;
   position: relative;
   margin-bottom: 25px;
 }
@@ -513,9 +512,19 @@ a {
     gap: 20px;
   }
   .fonctionnement--liste .fonctionnement--choix {
+    justify-content: center;
     height: 100px;
     width: 33%;
     word-wrap: break-word;
+    padding: 0;
+  }
+  .fonctionnement--liste .fonctionnement--choix::before {
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .fonctionnement--liste .fonctionnement--choix i {
+    margin-left: 0;
   }
 
   .restaurant--groupe {
@@ -524,7 +533,21 @@ a {
     justify-content: space-between;
   }
   .restaurant--groupe .restaurant--article {
-    width: 49%;
+    width: 50%;
+  }
+  .restaurant--groupe .restaurant--article:nth-child(2), .restaurant--groupe .restaurant--article:nth-child(4) {
+    padding-left: 20px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .commande-groupee {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+  }
+  .commande-groupee .commande {
+    width: 33%;
+    padding: 0 20px 0 20px;
   }
 }
 

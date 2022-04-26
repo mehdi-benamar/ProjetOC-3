@@ -210,7 +210,7 @@
 
   &--article{
     width: 100%;
-    max-width: 900px;
+    // max-width: 900px;
     position: relative;
     margin-bottom: 25px;
   }
@@ -505,15 +505,27 @@
   }
 }
 
+// mise en formepour tablette et téléphone
+
 @media only screen and (min-width: map-get($breakPoints, "mobile")){
   .fonctionnement--liste{
     flex-direction: row;
     align-items: center;
     gap: 20px;
     & .fonctionnement--choix{
+      justify-content: center;
       height: 100px;
       width: 33%;
       word-wrap: break-word;
+      padding: 0;
+      &::before{
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      & i{
+        margin-left: 0;
+      }
     }
   }
 
@@ -522,7 +534,22 @@
     flex-wrap: wrap;
     justify-content: space-between;
     & .restaurant--article{
-      width: 49%;
+      width: 50%;
+      &:nth-child(2), &:nth-child(4){
+        padding-left: 20px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: map-get($breakPoints, "tablette")){
+  .commande-groupee{
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    & .commande{
+      width: 33%;
+      padding: 0 20px 0 20px;
     }
   }
 }
