@@ -401,10 +401,11 @@
     @include boxShadow;
 
     &:hover .commande--check, &:focus .commande--check{
-      transform: translateY(-50%) scaleX(1);
-      z-index: 1;
+      min-width: 70px;
+      opacity: 1;
       & i{
         transform: rotate(360deg);
+        opacity: 1;
       }
     }
 
@@ -417,24 +418,26 @@
 
   &--check{
     position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     right: 0;
     top: 50%;
-    transform: translateY(-50%) scaleX(0);
-    transform-origin: right;
+    transform: translateY(-50%);
+    min-width: 0;
+    opacity: 0;
     background-color: $couleur-tertiaire;
     height: 100%;
-    padding: 30px 20px;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
-    transition: z-index, transform, .5s ease-in-out;
-    overflow: hidden;
-    z-index: -1;
+    transition: opacity, min-width, .5s ease-in-out;
 
     & i{
       color: white;
       font-size: 20px;
       transform: rotate(0deg);
-      transition: transform .5s .2s ease-in-out;
+      transition: transform .5s ease-in-out;
+      opacity: 0;
     }
   }
 

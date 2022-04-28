@@ -409,11 +409,12 @@ a {
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 .commande--plat:hover .commande--check, .commande--plat:focus .commande--check {
-  transform: translateY(-50%) scaleX(1);
-  z-index: 1;
+  min-width: 70px;
+  opacity: 1;
 }
 .commande--plat:hover .commande--check i, .commande--plat:focus .commande--check i {
   transform: rotate(360deg);
+  opacity: 1;
 }
 .commande--plat:hover .commande--footer, .commande--plat:focus .commande--footer {
   padding-right: 65px;
@@ -422,24 +423,26 @@ a {
 }
 .commande--check {
   position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   right: 0;
   top: 50%;
-  transform: translateY(-50%) scaleX(0);
-  transform-origin: right;
+  transform: translateY(-50%);
+  min-width: 0;
+  opacity: 0;
   background-color: #99E2D0;
   height: 100%;
-  padding: 30px 20px;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
-  transition: z-index, transform, 0.5s ease-in-out;
-  overflow: hidden;
-  z-index: -1;
+  transition: opacity, min-width, 0.5s ease-in-out;
 }
 .commande--check i {
   color: white;
   font-size: 20px;
   transform: rotate(0deg);
-  transition: transform 0.5s 0.2s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+  opacity: 0;
 }
 .commande--nom {
   font-size: 18px;
