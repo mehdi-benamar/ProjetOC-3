@@ -50,65 +50,71 @@
   }
 }
 
-.header{
-  width: 300px;
+.header {
+  width: 200px;
   margin: 15px auto;
+  display: flex;
+  align-items: center;
 
-  & .header--image{
-    display: block;
+  & .header--image {
     width: 100%;
   }
-  &--arrow{
+
+  & a {
     position: absolute;
-    left: 20px;
-    top: 35px;
-    color: black
+    left: 2%;
+    display: inline-block;
+    color: black;
+    & .header--arrow{
+      font-size: 20px;
+    }
   }
 }
 
 // page principale
-.conteneur{
+.conteneur {
   width: 100%;
   background-color: #f6f6f6;
-
 }
 
-.localite{
+.localite {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
+  height: 80px;
   @include paddingTopBottom(15px, 15px);
   @include grisOpacite(0.5);
 
-  &--icon{
+  &--icon {
     margin-right: 14px;
   }
 }
 
 // rubrique "réservation"
 
-.reservation{
+.reservation {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 20px 0 20px;
+  padding: 60px 20px 60px 20px;
   text-align: center;
   width: 100%;
-  @include paddingTopBottom(60px,60px);
   @include grisOpacite(0.2);
 
-  &--titre{
+  &--titre {
     margin-bottom: 20px;
   }
 
-  &--texte{
+  &--texte {
     margin-bottom: 20px;
-    padding-right: 20px;;
-    padding-left: 20px;;
+    padding-right: 20px;
+    ;
+    padding-left: 20px;
+    ;
   }
 
-  &--btn{
+  &--btn {
     background: linear-gradient(180deg, $couleur-secondaire, $couleur-primaire);
     color: white;
     padding: 13px 15px 13px 15px;
@@ -116,7 +122,7 @@
     transition: opacity .3s, box-shadow .3s;
     @include boxShadow();
 
-    &:hover{
+    &:hover {
       opacity: 0.85;
       @include boxShadowHover();
     }
@@ -124,25 +130,29 @@
 }
 
 // rubrique "fonctionnement"
-.fonctionnement{
+.fonctionnement {
   display: flex;
   flex-direction: column;
   width: 100%;
   padding: 40px 20px 40px 20px;
-  
-  &--liste{
+
+  &--liste {
     display: flex;
     flex-direction: column;
     width: 100%;
+    padding-left: 14px;
     border-radius: 20px;
   }
-  &--titre{
+
+  &--titre {
     margin-bottom: 20px;
   }
-  &--choix{
+
+  &--choix {
     display: flex;
     align-items: center;
     width: 100%;
+    height: 115px;
     border-radius: 20px;
     padding: 20px 0 20px 25px;
     margin-bottom: 20px;
@@ -151,21 +161,25 @@
     @include grisOpacite(0.2);
     @include boxShadow();
     transition: background-color .3s ease-in,
-                box-shadow .3s ease-in;
-    & i{
+      box-shadow .3s ease-in;
+
+    & i {
       color: black;
       transition: color .3s ease-in;
     }
-    &:hover{
+
+    &:hover {
       background-color: lighten($couleur-primaire, 30%);
       cursor: pointer;
       @include boxShadowHover();
-      & i{
+
+      & i {
         color: $couleur-primaire
       }
     }
   }
-  &--choix::before{
+
+  &--choix::before {
     content: "1";
     width: 30px;
     height: 30px;
@@ -181,48 +195,54 @@
     background-color: $couleur-primaire;
     color: white
   }
-  &--choix.list::before{
+
+  &--choix.list::before {
     content: "2";
   }
-  &--choix.store::before{
+
+  &--choix.store::before {
     content: "3";
   }
-  &--icon{
+
+  &--icon {
     margin-right: 20px;
     margin-left: 15px;
   }
 }
 
 // rubrique "restaurant"
-.restaurant{
+.restaurant {
   @include grisOpacite(0.2);
   display: flex;
   flex-direction: column;
   padding: 40px 20px 40px 20px;
   width: 100%;
 
-  &--groupe{
+  &--groupe {
     display: flex;
     flex-direction: column;
     margin-top: 30px;
     width: 100%;
   }
 
-  &--article{
+  &--article {
     width: 100%;
-    // max-width: 900px;
     position: relative;
     margin-bottom: 25px;
+    transition: transform .2s ease-in;
+    &:hover{
+      transform: scale(1.03);
+    }
   }
 
-  &--image{
+  &--image {
     height: 220px;
     width: 100%;
     object-fit: cover;
     @include borderRadiusTop;
   }
 
-  &--nouveau{
+  &--nouveau {
     position: absolute;
     top: 15px;
     right: 15px;
@@ -231,10 +251,10 @@
     border-radius: 5px;
     padding: 5px 10px 5px 10px;
     text-transform: capitalize;
-    
+
   }
 
-  &--footer{
+  &--footer {
     background-color: white;
     position: relative;
     padding: 20px 17px 15px 17px;
@@ -243,35 +263,40 @@
     align-items: center;
     @include borderRadiusBottom;
 
-     & .restaurant--icon{
+    & .restaurant--icon {
       font-size: 25px;
       position: absolute;
       display: inline-block;
       right: 17px;
-     }
+    }
 
-     & .fa-solid{
-       @include coeurTransparent;
-       &:hover{
+    & .fa-solid {
+      @include coeurTransparent;
+
+      &:hover {
         @include coeurApparition;
       }
-     }
+    }
   }
 
-  &--description h3{
+  &--description h3 {
     margin-bottom: 3px;
+  }
+  &--description p {
+    font-weight: 200;
   }
 }
 
 // footer de la page
-.footer{
+.footer {
   display: flex;
   flex-direction: column;
   padding: 15px 20px 30px 20px;
   width: 100%;
   background-color: rgb(53, 53, 53);
   color: white;
-  &--logo{
+
+  &--logo {
     width: 120px;
     display: block;
     margin-bottom: 20px;
@@ -282,33 +307,34 @@
     font-weight: lighter;
   }
 
-  &--navigation ul{
+  &--navigation ul {
     display: flex;
     flex-direction: column;
   }
 
-  &--navigation &--liste{
+  &--navigation &--liste {
     list-style: none;
     margin-bottom: 10px;
-    &:nth-child(1), 
-    &:nth-child(2){
+
+    &:nth-child(1),
+    &:nth-child(2) {
       display: flex;
       align-items: center;
     }
 
-    &:last-child a{
+    &:last-child a {
       color: white
     }
 
-    &:last-child:hover{
+    &:last-child:hover {
       text-decoration: underline;
     }
 
-    &:nth-child(1) .footer--icon{
+    &:nth-child(1) .footer--icon {
       margin-right: 17px;
     }
 
-    & .footer--icon{
+    & .footer--icon {
       margin-right: 10px;
     }
   }
@@ -319,14 +345,15 @@
 .carte {
   width: 100%;
   height: 300px;
-  &--image{
+
+  &--image {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
 }
 
-.menu{
+.menu {
   width: 100%;
   height: 100%;
   background-color: #f6f6f6;
@@ -334,22 +361,28 @@
   top: -40px;
   padding: 25px 20px 0 20px;
   @include borderRadiusTop(30px, 30px);
-  &--header{
+
+  &--header {
     display: flex;
     align-items: center;
     position: relative;
-    & .menu--titre{
+
+    & .menu--titre {
       letter-spacing: 1px;
       font-weight: lighter;
       font-size: 25px;
     }
-    & .menu--icon{
+
+    & .menu--icon {
       position: absolute;
       right: 20px;
       font-size: 25px;
-      &.fa-solid{
+
+      &.fa-solid {
         @include coeurTransparent;
-        &:hover, &:focus{
+
+        &:hover,
+        &:focus {
           @include coeurApparition;
         }
       }
@@ -357,7 +390,7 @@
   }
 }
 
-.commande{
+.commande {
   width: 100%;
   height: 100%;
   margin-bottom: 25px;
@@ -366,31 +399,36 @@
   gap: 20px;
   animation: menuOpacite 2s ease-in-out forwards;
   opacity: 0;
-  &:nth-child(2){
+
+  &:nth-child(2) {
     animation-delay: .3s;
   }
-  &:nth-child(3){
+
+  &:nth-child(3) {
     animation-delay: .5s;
   }
 
-  &:nth-child(4){
+  &:nth-child(4) {
     animation-delay: .8s;
   }
-  
-  &--header{
+
+  &--header {
     padding-top: 20px;
   }
-  &--titre{
+
+  &--titre {
     text-transform: uppercase;
   }
-  &--underline{
+
+  &--underline {
     width: 45px;
     height: 4px;
     border: none;
     background-color: $couleur-tertiaire;
     margin-top: 5px;
   }
-  &--plat{
+
+  &--plat {
     width: 100%;
     height: 100%;
     background-color: white;
@@ -400,23 +438,26 @@
     cursor: pointer;
     @include boxShadow;
 
-    &:hover .commande--check, &:focus .commande--check{
+    &:hover .commande--check,
+    &:focus .commande--check {
       min-width: 70px;
       opacity: 1;
-      & i{
+
+      & i {
         transform: rotate(360deg);
         opacity: 1;
       }
     }
 
-    &:hover .commande--footer, &:focus .commande--footer{
+    &:hover .commande--footer,
+    &:focus .commande--footer {
       padding-right: 65px;
       border-top-right-radius: 0;
       border-bottom-right-radius: 0;
     }
   }
 
-  &--check{
+  &--check {
     position: absolute;
     display: flex;
     align-items: center;
@@ -432,7 +473,7 @@
     border-bottom-right-radius: 20px;
     transition: opacity, min-width, .5s ease-in-out;
 
-    & i{
+    & i {
       color: white;
       font-size: 20px;
       transform: rotate(0deg);
@@ -441,26 +482,29 @@
     }
   }
 
-  &--nom{
+  &--nom {
     font-size: 18px;
     @include overflow;
   }
-  &--footer{
+
+  &--footer {
     display: flex;
     justify-content: space-between;
     width: 100%;
     transition: padding .5s ease-in-out;
     padding-right: 0;
   }
-  &--description{
+
+  &--description {
     @include overflow;
   }
 }
 
-.btn{
+.btn {
   text-align: center;
   padding-bottom: 120px;
-  &--commande{
+
+  &--commande {
     background: linear-gradient(180deg, $couleur-secondaire, $couleur-primaire);
     color: white;
     padding: 13px 50px 13px 50px;
@@ -468,7 +512,8 @@
     transition: opacity .3s, box-shadow .3s;
     @include boxShadow();
 
-    &:hover, &:focus{
+    &:hover,
+    &:focus {
       opacity: 0.85;
       @include boxShadowHover();
     }
@@ -482,6 +527,7 @@
     opacity: 0;
     transform: translateY(300%);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
@@ -492,6 +538,7 @@
   0% {
     transform: rotate(0);
   }
+
   100% {
     transform: rotate(360deg);
   }
@@ -502,6 +549,7 @@
     z-index: 2;
     opacity: 1;
   }
+
   100% {
     z-index: -1;
     opacity: 0;
@@ -510,49 +558,71 @@
 
 // mise en formepour tablette et téléphone
 
-@media only screen and (min-width: map-get($breakPoints, "mobile")){
-  .fonctionnement--liste{
+@media only screen and (min-width: map-get($breakPoints, "mobile")) {
+  .header{
+    width: 270px;
+  }
+  .conteneur {
+    padding-left: 15%;
+    padding-right: 15%;
+  }
+
+  .fonctionnement--liste {
     flex-direction: row;
     align-items: center;
     gap: 20px;
-    & .fonctionnement--choix{
+
+    & .fonctionnement--choix {
       justify-content: center;
       height: 100px;
       width: 33%;
       word-wrap: break-word;
-      padding: 0;
-      &::before{
+      padding-right: 20px;
+
+      &::before {
         top: 0;
         left: 50%;
         transform: translate(-50%, -50%);
       }
-      & i{
+
+      & i {
         margin-left: 0;
       }
     }
   }
 
-  .restaurant--groupe{
+  .restaurant--groupe {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-    & .restaurant--article{
+
+    & .restaurant--article {
       width: 50%;
-      &:nth-child(2), &:nth-child(4){
+
+      &:nth-child(2),
+      &:nth-child(4) {
         padding-left: 20px;
       }
     }
   }
+
+  .footer{
+    padding: 0 15% 0 17%;
+  }
 }
 
-@media only screen and (min-width: map-get($breakPoints, "tablette")){
-  .commande-groupee{
+@media only screen and (min-width: map-get($breakPoints, "tablette")) {
+  .commande-groupee {
     width: 100%;
     display: flex;
     align-items: flex-start;
-    & .commande{
+
+    & .commande {
       width: 33%;
       padding: 0 20px 0 20px;
     }
+  }
+  .fonctionnement--choix{
+    padding-left: 25px;
   }
 }
