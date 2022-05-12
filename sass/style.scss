@@ -525,7 +525,7 @@
 @keyframes menuOpacite {
   0% {
     opacity: 0;
-    transform: translateY(300%);
+    transform: translateY(250%);
   }
 
   100% {
@@ -562,52 +562,60 @@
   .header{
     width: 270px;
   }
-  .conteneur {
+  .fonctionnement {
+    padding-left: 15%;
+    padding-right: 15%;
+    &--liste {
+      flex-direction: row;
+      align-items: center;
+      gap: 20px;
+  
+      & .fonctionnement--choix {
+        justify-content: center;
+        height: 100px;
+        width: 33%;
+        word-wrap: break-word;
+        padding-right: 20px;
+  
+        &::before {
+          top: 0;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+  
+        & i {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+
+  .restaurant{
+    padding-left: 15%;
+    padding-right: 15%;
+    &--groupe {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+  
+      & .restaurant--article {
+        width: 50%;
+  
+        &:nth-child(2),
+        &:nth-child(4) {
+          padding-left: 20px;
+        }
+      }
+    }
+  }
+
+  .menu{
     padding-left: 15%;
     padding-right: 15%;
   }
 
-  .fonctionnement--liste {
-    flex-direction: row;
-    align-items: center;
-    gap: 20px;
-
-    & .fonctionnement--choix {
-      justify-content: center;
-      height: 100px;
-      width: 33%;
-      word-wrap: break-word;
-      padding-right: 20px;
-
-      &::before {
-        top: 0;
-        left: 50%;
-        transform: translate(-50%, -50%);
-      }
-
-      & i {
-        margin-left: 0;
-      }
-    }
-  }
-
-  .restaurant--groupe {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-
-    & .restaurant--article {
-      width: 50%;
-
-      &:nth-child(2),
-      &:nth-child(4) {
-        padding-left: 20px;
-      }
-    }
-  }
-
   .footer{
-    padding: 0 15% 0 17%;
+    padding: 0 15% 0 15%;
   }
 }
 
