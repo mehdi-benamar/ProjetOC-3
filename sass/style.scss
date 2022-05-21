@@ -149,7 +149,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 248px;
+  height: 529px;
   padding: 40px 20px 40px 20px;
 
   &--liste {
@@ -585,6 +585,7 @@
   .fonctionnement {
     padding-left: 15%;
     padding-right: 15%;
+    height: 248px;
     &--liste {
       flex-direction: row;
       align-items: center;
